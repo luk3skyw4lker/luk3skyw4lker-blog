@@ -8,6 +8,7 @@
 		"typecheck": "tsc"
 	},
 	"dependencies": {
+		"@bristom/commitlint-config": "^1.0.1",
 		"classnames": "2.2.6",
 		"date-fns": "2.10.0",
 		"gray-matter": "4.0.2",
@@ -20,7 +21,6 @@
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^11.0.0",
-		"@commitlint/config-conventional": "^11.0.0",
 		"@types/classnames": "^2.2.10",
 		"@types/jest": "^25.2.2",
 		"@types/node": "^14.0.1",
