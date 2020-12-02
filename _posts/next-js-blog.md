@@ -14,6 +14,16 @@ ogImage:
 
 The JavaScript ecossystem is getting bigger everyday. React is one of the most used techs that are built on top of the JavasScript language and Node.js runtime, and together with it, a lot of frameworks like Gatsby, which is the first concurrent of Next.js.
 
+In this article we will build a blog from scratch using Next.js, Typescript, you must be thinking "and what about the articles? We'll not connect to a database to get them?", and no, we won't, this approach will be more like a git-based CMS, and for the articles we will use Markdown files to write them and some libraries to translate them into HTML in the moment of the Static Generation (thus, using Next.js SSG feature).
+
+So, the techs we will use here are:
+
+- Next.js
+- Typescript
+- Markdown
+
+Let's head into it!
+
 ## Lorem Ipsum
 
 Tristique senectus et netus et malesuada fames ac turpis. Ridiculous mus mauris vitae ultricies leo integer malesuada nunc vel. In mollis nunc sed id semper. Egestas tellus rutrum tellus pellentesque. Phasellus vestibulum lorem sed risus ultricies tristique nulla. Quis blandit turpis cursus in hac habitasse platea dictumst quisque. Eros donec ac odio tempor orci dapibus ultrices. Aliquam sem et tortor consequat id porta nibh. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla. Diam vulputate ut pharetra sit amet. Ut tellus elementum sagittis vitae et leo. Arcu non odio euismod lacinia at quis risus sed vulputate.
