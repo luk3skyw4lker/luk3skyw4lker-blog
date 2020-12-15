@@ -1,13 +1,15 @@
 module.exports = {
+	darkMode: 'class',
 	purge: ['./components/**/*.tsx', './pages/**/*.tsx'],
 	theme: {
 		extend: {
 			colors: {
-				'accent-1': '#FAFAFA',
-				'accent-2': '#EAEAEA',
-				'accent-7': '#333',
+				dark: '#1d1f1d',
 				success: '#0070f3',
 				cyan: '#79FFE1'
+			},
+			textColor: {
+				neutral: '#d8d4cf'
 			},
 			spacing: {
 				28: '7rem'
