@@ -1,13 +1,13 @@
 ---
 title: 'Building a Blog with Next.js and Typescript'
 excerpt: 'The JavaScript ecossystem is getting bigger everyday. React is one of the most used techs that are built on top of the JavasScript language and Node.js runtime, and together with it, a lot of frameworks like Gatsby, which is the first concurrent of Next.js.'
-coverImage: 'https://og-image.vercel.app/Building%20a%20Blog%20with%20Next.js%20and%20Typescript.png?theme=dark&md=1&fontSize=100px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-white-logo.svg&images=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fremojansen%2Flogo.ts%40master%2Fts.svg'
+coverImage: 'https://thumbnail-generator.vercel.app/api/thumbnail.png?title=Building%20a%20Blog%20with%20**Typescript**%20and%20**Next.js**&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-white-logo.svg&images=https://cdn.jsdelivr.net/gh/remojansen/logo.ts@master/ts.svg'
 date: '2020-12-01T13:58:07.322Z'
 author:
   name: Lucas Henrique
   picture: '/assets/blog/authors/luk3skyw4lker.jpg'
 ogImage:
-  url: 'https://og-image.vercel.app/Building%20a%20Blog%20with%20Next.js%20and%20Typescript.png?theme=dark&md=1&fontSize=100px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-white-logo.svg&images=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fremojansen%2Flogo.ts%40master%2Fts.svg'
+  url: 'https://thumbnail-generator.vercel.app/api/thumbnail.png?title=Building%20a%20Blog%20with%20**Typescript**%20and%20**Next.js**&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-white-logo.svg&images=https://cdn.jsdelivr.net/gh/remojansen/logo.ts@master/ts.svg'
 ---
 
 ## Overview
