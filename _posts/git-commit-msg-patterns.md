@@ -1,6 +1,6 @@
 ---
 title: 'Automating commit message patterns with commitlint'
-excerpt: 'Commit messages can really improve your repository organization, observation and standards, today we will learn on how to implement them the right (and automated) way.'
+excerpt: 'Commit messages pattern can really improve your repository organization, observation and standards, today we will learn on how to implement them the right (and automated) way.'
 coverImage: 'https://thumbnail-generator.vercel.app/api/thumbnail.png?title=**Linting**%20git%20commit%20messages&images=https://cdn.worldvectorlogo.com/logos/gitignoreio-1.svg'
 date: '2020-12-16T13:58:07.322Z'
 author:
@@ -14,7 +14,7 @@ ogImage:
 
 Alright, let's start by understanding what is git and why sould we use it.
 
-At first glance, **git** is a Distributed Version Control System (VCS), that makes it easier to track changes to files, so when you change a file (create/update), it can determine if the file is new and if the file isn't **git** will tell you exaclty what changed on the file. There are another Distributed VCSs that you can use, like ArX, Fossil, Mercurial, Monotone, etc. I can make a whole article speaking of VCSs here (including the non distributed ones).
+In plain terms, **git** is a Distributed Version Control System (Distributed VCS), that makes it easier to track changes to files, so when you change a file (create/update), it can determine if the file is new and if the file isn't **git** will tell you exaclty what changed on the file. There are another Distributed VCSs that you can use, like ArX, Fossil, Mercurial, Monotone, etc. I can make a whole article speaking of VCSs here (including the non distributed ones).
 
 But then, being git the most popular Distributed VCS, does it really makes sense to use it? Yes, git has a good disposition of remote tools like gitlab, github and many others. It's also well known for versioning code and it has a lot of free knowledgement on the internet, so for practical reasons, git is our best option. If you wish to know more about git, visit [git-scm](https://git-scm.com/).
 
@@ -67,9 +67,13 @@ You can also write your own config (wheter it's based on one of the aboves or it
 
 To install **husky**, **commitlint** and the config you chose as development dependencies you should run:
 
-    npm install husky @commitlint/cli <name-of-the-config-package> --dev
+    npm install husky @commitlint/cli <config-package> --dev
 
-In my case I'll install the @bristom/commitlint-config, as it is my default.
+Or with **yarn**
+
+    yarn add husky @commitlint/cli <config-package> --dev
+
+In my case I'll install the [**@bristom/commitlint-config**](https://www.npmjs.com/package/@bristom/commitlint-config), as it is my default.
 
 Then, in the root of our project, you create two files: **.huskyrc** and **commitlint.config.js**. The .huskyrc file stores the git hooks config for husky to run, and the commitlint.config.js stores the commitlint config to check the commit messages. The content for each one is listed below:
 
@@ -99,16 +103,18 @@ Alright, with everything setup, let's try to make a commit:
 git commit -m "anything"
 ```
 
-This will throw an error on basically all configs installed, since itsn't compatible with any pattern, but if instead I try:
+This will throw an error on basically all configs installed, since isn't compatible with any pattern, but if instead I try:
 
 ```shell
 git commit -m "[feat]: Initial commit"
 ```
 
-It'll work perfectly (check the pattern of you config package to make the commit right).
+It will work perfectly (check the pattern of you config package to make the commit right).
 
 ## Overview
 
-Now, today we've learned a little bit about git, git hooks and how to automate the check of commit messages patterns using some Javascript tools, but even if I had only used Javascript, you can implement it on any code of yours and the better of it: using the same tools, you just have to install node and instead of install the commitlint CLI scoped for a project, you install it using the -g flag of npm. The downside is that you won't have hooks automated too, you'll have to configure them on your own.
+Now, today we've learned a little bit about git, git hooks and how to automate the check of commit messages patterns using some Javascript tools.
+
+But even if I had only used Javascript, you can implement it on any code of yours and the better of it: **using the same tools**, you just have to install **<a href="https://nodejs.org" class="hover:underline">Node.js</a>** and instead of install the commitlint CLI scoped for a project, you install it using the -g flag of npm. The downside is that you won't have hooks automated too, you'll have to configure them on your own.
 
 Thanks for your attention and for coming all the way here to learn, hope to see you soon!
