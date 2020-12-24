@@ -1,4 +1,4 @@
-# Luk3skyw4lker's Blog
+# Lucas Lemos's Blog
 
 This is my personal blog. I've started it using the existing Next.js template [blog-starter](https://github.com/vercel/next.js/tree/canary/examples/blog-starter) and added my own styles. This is my first step to create content on the internet, so please be patient when something is wrong or buggy.
 
