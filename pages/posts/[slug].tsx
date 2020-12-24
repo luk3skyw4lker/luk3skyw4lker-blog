@@ -36,7 +36,7 @@ const Post = ({ post, morePosts, preview }: Props) => {
 					<>
 						<article className="mb-32">
 							<Head>
-								<title>{post.title} | Luk3skyw4lker Blog</title>
+								<title>{post.title} | Lucas Lemos Blog</title>
 
 								<meta name="description" content={post.excerpt} />
 								<meta property="og:image" content={post.coverImage} />
