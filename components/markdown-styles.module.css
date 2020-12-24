@@ -2,11 +2,47 @@
 	@apply text-lg leading-relaxed;
 }
 
+.markdown {
+	text-align: justify;
+}
+
 .markdown p,
 .markdown ul,
 .markdown ol,
 .markdown blockquote {
 	@apply my-6;
+	list-style-type: circle;
+}
+
+.markdown ol {
+	list-style-type: decimal;
+}
+
+.markdown ul,
+.markdown ol {
+	margin-left: 3rem;
+}
+
+.markdown pre {
+	background-color: #000000;
+	border-radius: 5px;
+	padding: 1rem;
+}
+
+.markdown pre > code {
+	padding: 0;
+	color: honeydew;
+}
+
+.markdown code {
+	background-color: #000000;
+	padding: 0.2rem;
+	border-radius: 5px;
+	color: #0f7;
+}
+
+.markdown h2 {
+	font-weight: bold;
 }
 
 .markdown h2 {

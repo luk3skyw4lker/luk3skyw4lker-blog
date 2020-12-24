@@ -1,12 +1,13 @@
 import Head from 'next/head';
 
+import SectionSeparator from '../components/section-separator';
 import MoreStories from '../components/more-stories';
 import Container from '../components/container';
 import HeroPost from '../components/hero-post';
 import Layout from '../components/layout';
 import Intro from '../components/intro';
 
-import { BLOG_TITLE } from '../lib/constants';
+import { BLOG_TITLE, HOME_OG_IMAGE_URL } from '../lib/constants';
 import { getAllPosts } from '../lib/api';
 
 import Post from '../types/post';
@@ -23,18 +24,24 @@ const Index = ({ allPosts }: Props) => {
 			<Layout>
 				<Head>
 					<title>{BLOG_TITLE}</title>
+
+					<meta name="description" content="Luk3skyw4lker's Blog" />
+					<meta property="og:image" content={HOME_OG_IMAGE_URL} />
 				</Head>
 				<Container>
 					<Intro />
 					{heroPost && (
-						<HeroPost
-							title={heroPost.title}
-							coverImage={heroPost.coverImage}
-							date={heroPost.date}
-							author={heroPost.author}
-							slug={heroPost.slug}
-							excerpt={heroPost.excerpt}
-						/>
+						<>
+							<HeroPost
+								title={heroPost.title}
+								coverImage={heroPost.coverImage}
+								date={heroPost.date}
+								author={heroPost.author}
+								slug={heroPost.slug}
+								excerpt={heroPost.excerpt}
+							/>
+							<SectionSeparator />
+						</>
 					)}
 					{morePosts.length > 0 && <MoreStories posts={morePosts} />}
 				</Container>
