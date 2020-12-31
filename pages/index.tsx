@@ -25,7 +25,10 @@ const Index = ({ allPosts }: Props) => {
 				<Head>
 					<title>{BLOG_TITLE}</title>
 
-					<meta name="description" content="Luk3skyw4lker's Blog" />
+					<meta
+						name="description"
+						content="Lucas Lemos's Blog. I write about tech, most often about Javascript and Typescript, it would be my pleasure to have you reading one of my articles!"
+					/>
 					<meta property="og:image" content={HOME_OG_IMAGE_URL} />
 				</Head>
 				<Container>
