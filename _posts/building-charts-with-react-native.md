@@ -10,7 +10,7 @@ ogImage:
   url: 'https://thumbnail-generator.vercel.app/api/thumbnail.png?title=Building%20**charts**%20in%20**React%20Native**&images=https://cdn.worldvectorlogo.com/logos/react-2.svg&images=https://www.flaticon.com/svg/static/icons/svg/784/784814.svg'
 ---
 
-# Overview
+## Overview
 
 I see many doubts about how to build and display charts in React Native and today I'm writing this article hoping that it becomes a very clear and good guide for anyone who's trying to find a easy tutorial on how to do it.
 
@@ -23,7 +23,7 @@ These are the two most used libraries on the NPM Package Registry, but since **r
 
 If you want more opinions, you can check out this [Top 8 Charts Libraries For React Native](https://blog.logrocket.com/the-top-8-react-native-chart-libraries-for-2021/). Alright, let's get started with our project.
 
-# Initialization
+## Initialization
 
 To save us time in the configuration of the project, I've built a base screen for us to start, you can find it on the [**GitHub Repository**](https://github.com/luk3skyw4lker/rn-charts.git). We will build some random data to render on our chart and in the end of the article, there will be two suggestions to evolve the project.
 
@@ -100,7 +100,7 @@ Right, so now our chart is a lot more fancy than before, but we will add two mor
 
 But I think that we must know how SVG works after doing that, so let's do it.
 
-# Understanding how SVG works
+## Understanding how SVG works
 
 According to the MDN, SVG can be defined as a **XML-based markup language for describing two dimensional based vector graphics**. So it's basically a text-based open Web standard to describe images that can be cleanly at any size and are designed to work with another web standards such as CSS, DOM, JS etc. Putting into correspondence terms: SVG is for graphics what HTML is to text.
 
@@ -108,13 +108,13 @@ Noting that SVG works with two dimensional vectors, you must understand that a S
 
 Alright, we just made a brief talk about SVG, if you want to know more, visit the [MDN](https://developer.mozilla.org/en-US/docs/Web/SVG), it will help you understand more about SVG, most of the content of that briefing, was taken from there.
 
-# Back to the charts
+## Back to the charts
 
 So, getting back to the charts, let's do the first task I've mentioned, the circle on each data point. To do that, we must at first create our own `Markers` and `Label` compnents. To do that, you should create a components folder inside the `src` existant folder and inside it, create a `ChartComponents.tsx` file. It will be from this file that we will export all of our custom chart components.
 
 Both components are very simple, we will use some caveats from the library itself to make it easier to build them.
 
-## Markers
+### Markers
 
 The `Markers` component will consist of a black circle that will be positioned on each marked data point. Just write the following code into our **ChartComponents.tsx** file:
 
@@ -169,7 +169,7 @@ import { Markers } from './src/components/ChartComponents';
 export default App;
 ```
 
-## Labels
+### Labels
 
 Right, so with all of that information you must know how to implement the `Labels` component, right? Write the following lines of code into the components file, right below the Markers component:
 
@@ -236,7 +236,7 @@ contentInset={{
 
 Now our content looks a lot more agradable and our chart a lot more fancy, don't you think?
 
-# Final Considerations
+## Final Considerations
 
 Today we have saw how to build a real chart using the `react-native-svg-charts` library and React Native and I have a challenge for those who came to the end of this article:
 
