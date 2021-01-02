@@ -12,6 +12,7 @@ import Layout from '../../components/layout';
 import { getPostBySlug, getAllPosts } from '../../lib/api';
 import markdownToHtml from '../../lib/markdownToHtml';
 import PostType from '../../types/post';
+import { GetStaticPaths } from 'next';
 
 type Props = {
 	post: PostType;
@@ -64,6 +65,8 @@ type Params = {
 	};
 };
 
+// Add Next.js internationalization config and then get the articles by path
+// Like: /en/building-charts-with-react-native or /pt/building-charts-with-react-native
 export async function getStaticProps({ params }: Params) {
 	const post = getPostBySlug(params.slug, [
 		'title',
@@ -88,7 +91,7 @@ export async function getStaticProps({ params }: Params) {
 	};
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
 	const posts = getAllPosts(['slug']);
 
 	return {
@@ -99,6 +102,6 @@ export async function getStaticPaths() {
 				}
 			};
 		}),
-		fallback: false
+		fallback: 'blocking'
 	};
-}
+};
