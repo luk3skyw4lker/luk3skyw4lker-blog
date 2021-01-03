@@ -7,7 +7,7 @@ author:
   name: Lucas Henrique
   picture: '/assets/blog/authors/luk3skyw4lker.jpg'
 ogImage:
-  url: 'https://thumbnail-generator.vercel.app/api/thumbnail.png?title=Building%20**charts**%20in%20**React%20Native**&images=https://cdn.worldvectorlogo.com/logos/react-2.svg&images=https://www.flaticon.com/svg/static/icons/svg/784/784814.svg'
+  url: 'https://thumbnail-generator.vercel.app/api/thumbnail.png?title=Construindo%20**gráficos**%20com%20**React%20Native**&images=https://cdn.worldvectorlogo.com/logos/react-2.svg&images=https://www.flaticon.com/svg/static/icons/svg/784/784814.svg'
 ---
 
 ## Overview
