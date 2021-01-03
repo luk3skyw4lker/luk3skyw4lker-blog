@@ -62,13 +62,12 @@ export default Post;
 type Params = {
 	params: {
 		slug: string;
+		locale: string;
 	};
 };
 
-// Add Next.js internationalization config and then get the articles by path
-// Like: /en/building-charts-with-react-native or /pt/building-charts-with-react-native
 export async function getStaticProps({ params }: Params) {
-	const post = getPostBySlug(params.slug, [
+	const post = getPostBySlug(params, [
 		'title',
 		'date',
 		'slug',
@@ -91,17 +90,31 @@ export async function getStaticProps({ params }: Params) {
 	};
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
+	const [firstLocale, lastLocale] = locales as string[];
 	const posts = getAllPosts(['slug']);
 
-	return {
-		paths: posts.map(posts => {
-			return {
-				params: {
-					slug: posts.slug
+	const paths = posts
+		.map(post => {
+			return [
+				{
+					params: {
+						slug: post.slug,
+						locale: firstLocale
+					}
+				},
+				{
+					params: {
+						slug: post.slug,
+						locale: lastLocale
+					}
 				}
-			};
-		}),
+			];
+		})
+		.flat(1);
+
+	return {
+		paths,
 		fallback: 'blocking'
 	};
 };

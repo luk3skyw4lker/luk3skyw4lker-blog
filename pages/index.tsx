@@ -1,3 +1,4 @@
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
 
 import SectionSeparator from '../components/section-separator';
@@ -14,10 +15,15 @@ import Post from '../types/post';
 
 type Props = {
 	allPosts: Post[];
+	locale: string;
 };
 
-const Index = ({ allPosts }: Props) => {
+const Index = ({ allPosts, locale }: Props) => {
 	const [heroPost, ...morePosts] = allPosts;
+	const meta_description =
+		locale === 'en'
+			? "Lucas Lemos's Blog. I write about tech, most often about Javascript and Typescript, it would be my pleasure to have you reading one of my articles!"
+			: 'Blog do Lucas Lemos. Escrevo sobre tecnologia, mais frequentemente sobre Javascript e Typescript, seria um prazer ter você lendo meus artigos!';
 
 	return (
 		<>
@@ -25,14 +31,11 @@ const Index = ({ allPosts }: Props) => {
 				<Head>
 					<title>{BLOG_TITLE}</title>
 
-					<meta
-						name="description"
-						content="Lucas Lemos's Blog. I write about tech, most often about Javascript and Typescript, it would be my pleasure to have you reading one of my articles!"
-					/>
+					<meta name="description" content={meta_description} />
 					<meta property="og:image" content={HOME_OG_IMAGE_URL} />
 				</Head>
 				<Container>
-					<Intro />
+					<Intro locale={locale} />
 					{heroPost && (
 						<>
 							<HeroPost
@@ -46,7 +49,9 @@ const Index = ({ allPosts }: Props) => {
 							<SectionSeparator />
 						</>
 					)}
-					{morePosts.length > 0 && <MoreStories posts={morePosts} />}
+					{morePosts.length > 0 && (
+						<MoreStories locale={locale} posts={morePosts} />
+					)}
 				</Container>
 			</Layout>
 		</>
@@ -55,17 +60,13 @@ const Index = ({ allPosts }: Props) => {
 
 export default Index;
 
-export const getStaticProps = async () => {
-	const allPosts = getAllPosts([
-		'title',
-		'date',
-		'slug',
-		'author',
-		'coverImage',
-		'excerpt'
-	]);
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+	const allPosts = getAllPosts(
+		['title', 'date', 'slug', 'author', 'coverImage', 'excerpt'],
+		locale as string
+	);
 
 	return {
-		props: { allPosts }
+		props: { allPosts, locale }
 	};
 };
