@@ -1,3 +1,4 @@
+import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 import Head from 'next/head';
@@ -12,7 +13,6 @@ import Layout from '../../components/layout';
 import { getPostBySlug, getAllPosts } from '../../lib/api';
 import markdownToHtml from '../../lib/markdownToHtml';
 import PostType from '../../types/post';
-import { GetStaticPaths } from 'next';
 
 type Props = {
 	post: PostType;
@@ -59,24 +59,20 @@ const Post = ({ post, morePosts, preview }: Props) => {
 
 export default Post;
 
-type Params = {
-	params: {
-		slug: string;
-		locale: string;
-	};
-};
-
-export async function getStaticProps({ params }: Params) {
-	const post = getPostBySlug(params, [
-		'title',
-		'date',
-		'slug',
-		'author',
-		'content',
-		'ogImage',
-		'coverImage',
-		'excerpt'
-	]);
+export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
+	const post = getPostBySlug(
+		{ slug: params?.slug as string, locale: locale as string },
+		[
+			'title',
+			'date',
+			'slug',
+			'author',
+			'content',
+			'ogImage',
+			'coverImage',
+			'excerpt'
+		]
+	);
 
 	const content = await markdownToHtml(post.content || '');
 
@@ -88,7 +84,7 @@ export async function getStaticProps({ params }: Params) {
 			}
 		}
 	};
-}
+};
 
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
 	const [firstLocale, lastLocale] = locales as string[];

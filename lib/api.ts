@@ -9,15 +9,11 @@ export function getPostSlugs() {
 }
 
 export function getPostBySlug(
-	params: { slug: string; locale?: string },
+	params: { slug: string; locale: string },
 	fields: string[] = []
 ) {
 	const realSlug = params.slug.replace(/\.md$/, '');
-	const fullPath = join(
-		postsDirectory,
-		params.locale || 'en',
-		`${realSlug}.md`
-	);
+	const fullPath = join(postsDirectory, params.locale, `${realSlug}.md`);
 	const fileContents = fs.readFileSync(fullPath, 'utf8');
 	const { data, content } = matter(fileContents);
 
