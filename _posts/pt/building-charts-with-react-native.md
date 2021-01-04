@@ -250,4 +250,4 @@ Se você quiser testar seu gráfico com dados reais, use a variável de estado `
 
 O desafio não será publicado no GitHub ainda, mas eu planejo resolver e postar assim que possível. Atualmente estou trabalhando em construir o básico do blog e traduzi-lo para pt-BR, então tomará um pouco de tempo.
 
-De qualquer forma, obrigado por ter vindo até o fim do artigo e eu esperoq ue você tenha aprendido algo! Obrigado.
+De qualquer forma, obrigado por ter vindo até o fim do artigo e eu espero que você tenha aprendido algo! Obrigado.
