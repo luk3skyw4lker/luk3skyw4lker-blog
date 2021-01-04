@@ -109,7 +109,7 @@ Note que SVG funciona com vetores bidimensionais, você tem que entender que uma
 
 Okay, nós acabamos de fazer uma rápida conversa sobre SVG, se você quiser entender ainda mais sobre SVG, visite a [MDN](https://developer.mozilla.org/en-US/docs/Web/SVG), será de grande ajuda para você, a maior parte do conteúdo deste resumo foi tirada de lá.
 
-## Back to the charts
+## De volta aos gráficos
 
 Então, voltando para os gráficos, vamos fazer a primeira tarefa que mencionei, o círculo em cada ponto de dado. Para fazer isso, nós devemos primeiro criar nossos próprios componentes `Markers` e `Label`. Para fazêlo, você deve criar uma pasta components dentro da pasta `src` existente e dentro dessa pasta, criar um arquivo `ChartComponents.tsx`. Será a partir desse arquivo que exportaremos todos os nossos componentes customizados.
 
@@ -242,7 +242,7 @@ contentInset={{
 
 Agora nosso gráfico parece bem mais chique e agradável, não é?
 
-## Final Considerations
+## Considerações Finais
 
 Hoje nós vimos como construir um gráfico real usando a biblioteca `react-native-svg-charts` e React Native e eu tenho um desafio para aqueles que chegaram até aqui:
 
