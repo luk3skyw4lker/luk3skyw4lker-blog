@@ -10,21 +10,21 @@ ogImage:
   url: 'https://thumbnail-generator.vercel.app/api/thumbnail.png?title=**Corrigindo**%20mensagens%20de%20commit%20no%20git&images=https://cdn.worldvectorlogo.com/logos/gitignoreio-1.svg'
 ---
 
-## First Things First
+## Primeiramente
 
-Alright, let's start by understanding what is git and why sould we use it.
+Okay, vamos começar por entender o que é o git e porque deveríamos usá-lo.
 
-In plain terms, **git** is a Distributed Version Control System (Distributed VCS), that makes it easier to track changes to files, so when you change a file (create/update), it can determine if the file is new and if the file isn't **git** will tell you exaclty what changed on the file. There are another Distributed VCSs that you can use, like ArX, Fossil, Mercurial, Monotone, etc. I can make a whole article speaking of VCSs here (including the non distributed ones).
+Em termos planos, **git** é um Sistema de Controle de Versão Distribuído (SCV Distribuído), que torna mais fácil o rastreamento de mudanças em arquivos para que quando você mude um arquivo (criar/atualizar), ele pode determinar se o arquivo é novo e se não for o **git** te dirá exatamente o que mudou naquele arquivo. Há outros SVCs Distribuídos que você pode utilizar, tais como ArX, Fossil, Mercurial, Monotone e etc. É possível fazer um artigo inteiro apenas sobre SCVs (incluído os não distribuídos).
 
-But then, being git the most popular Distributed VCS, does it really makes sense to use it? Yes, git has a good disposition of remote tools like gitlab, github and many others. It's also well known for versioning code and it has a lot of free knowledgement on the internet, so for practical reasons, git is our best option. If you wish to know more about git, visit [git-scm](https://git-scm.com/).
+Mas então, sendo o git o SCV Distribuído mais popular, realmente faz sentido usá-lo? Sim, git tem uma ótima disposição de ferramentas remotas como gitlab, github e várias outras. Também é bem conhecido pelo versionamento de código e tem muito conhecimento livre na internet, então por razões práticas, git é a nossa melhor opção. Se você deseja conhecer mais sobre git, visite [git-scm](https://git-scm.com/).
 
-In this article, we will focus on the **committing** part of git, which is basically a register of the change in a file or group of files. There are some conventions to write a _commit message_ we'll look into it and into some other aspects of git itself.
+Neste artigo, focaremos na parte de **commiting** do git, que é basicamente um registro de uma mudança de arquivo ou de um grupo de arquivos. Há algumas convenções no momento de escrever uma _mensagem de commit_. Nós veremos sobre isso e alguns outros aspectos do git em si.
 
-## Initializing
+## Inicializando
 
-**NOTE:** If you already know git, you can create a directory called _git-commit-msg-patterns_ and initialize a repository and jump right into the [**Installing Deps**](#git-hooks) section.
+**NOTA:** Se você já conhece o git, você pode criar um diretório chamado _git-commit-msg-patters_, inicializar um repositório e pular direto para a seção [**Instalando Dependências**](#installing-deps).
 
-Let's create a directory that will contain our project, open your terminal and type these two commands in sequence:
+Vamos criar um diretório que conterá nosso projeto, abra seu terminal e digite esses dois comandos em sequência:
 
 ```shell
 mkdir git-commit-msg-patterns
@@ -32,28 +32,28 @@ mkdir git-commit-msg-patterns
 cd git-commit-msg-patterns
 ```
 
-The first one create a directory and the second access it, all commands from now on will be executed having this directory as basis.
+O primeiro cria um diretório e o segundo acessa ele, todos os comandos daqui pra frente serão executados tendo esse diretório como base.
 
-Next, we need to initialize the git repository with the `git init` command, this will create a **.git** folder in the actual directory and store the git settings and changes there. This is the basic setup
+Em seguida, nós precisamos inicializar o repositório git com o comando `git init`, isso vai criar uma pasta **.git** no diretório atual e guardar as configurações do git e suas mudanças lá. Essa é a configuração básica.
 
-## Understanding basic concepts
+## Entendendo os conceitos básicos
 
-So, if you already know git, you must be aware that now we have a repository and any file created inside it will be at the status of **untracked**, when a file has this status it means that git don't have the file previously indexed in it's changes, in other words, it means that the **file is new inside the repository**.
+Então, se você já entende o básico de git, você deve saber que agora nós temos um repositório e qualquer arquivo criado dentro dele estará com o status de **untracked**, quando um arquivo tem este status significa que o git não tem o arquivo indexado previamente em suas mudanças, em outras palavras, significa que **o arquivo é novo dentro do repositório**.
 
-When you create a file, you should use the `git add` command to change it's status to **staged**, a staged file is basically the file (or group of files) that will be associated with the next **commit**.
+Quando você cria um arquivo, você deve usar o comando `git add` para mudar o status do arquivo para **staged**, um arquivo staged é basicamente o arquivo (ou grupo de arquivos) que serão associados com o próximo **commit**.
 
-As explained earlier, a **commit** is basically a register of a changes in a file or a group of files, a repository usually haves a timeline based on it's commits and the commit concept is usually explained as a "point of the repository timline", which is a pretty straight foward explanation.
+Como explicado anteriormente, um **commit** é basicamente um registro de mudanças em um arquivo ou grupo de arquivos, um repositório usualmente tem uma linha do tempo baseada em seus commits e o conceito de commit é usualmente explicado como "um ponto na linha do tempo do repositório", o que é uma explicação bastante direta.
 
-With everything explained, let's get into the main part.
+Com tudo explicado, comecemos a parte principal.
 
-<h2 id="installing-deps">Installing Deps</h2>
+<h2 id="installing-deps">Instalando Dependências</h2>
 
-We will use **Git Hooks** for the automatic check of commit messages, specially the _commit-msg_ hook which is the one that is responsible for checking the commit message pattern and validate it. I'll make an example using a basic template that I've learned from [this dev.to article](https://dev.to/helderburato/patterns-for-writing-better-git-commit-messages-4ba0), to turn the check automatic, we'll use some Javascript tools:
+Nós usaremos os **Git Hooks** para checagem automática das mensagens de commit, especialmente o hook _commit-msg_ que é o responsável por checar a mensagem de commit e validá-la. Eu farei um exemplo usando um template básico que eu aprendi [**neste artigo do dev.to**](https://dev.to/helderburato/patterns-for-writing-better-git-commit-messages-4ba0), para tornar a checagem automática, nós usaremos algumas ferramentas JavaScript:
 
 - **<a href="https://commitlint.js.org/#/" class="hover:underline">@commitlint/cli</a>**
 - **<a href="https://github.com/typicode/husky/tree/master" class="hover:underline">husky</a>**
 
-And one of these configs:
+E uma dessas configurações:
 
 - **<a href="https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/config-angular" class="hover:underline">@commitlint/config-angular</a>**
 - **<a href="https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/config-conventional" class="hover:underline">@commitlint/config-conventional</a>**
@@ -63,19 +63,19 @@ And one of these configs:
 - **<a href="https://github.com/gajus/conventional-changelog-lint-config-canonical" class="hover:underline">conventional-changelog-lint-config-canonical</a>**
 - **<a href="https://github.com/Gherciu/commitlint-jira" class="hover:underline">commitlint-config-jira</a>**
 
-You can also write your own config (wheter it's based on one of the aboves or it's a total new config) and publish it to npm, I wrote one for padronizing the commits in my work repos and here it is: [**@bristom/commitlint-config**](https://www.npmjs.com/package/@bristom/commitlint-config), you can check the [**Github repository**](https://github.com/bristom/commitlint-config) to see what are the rules.
+Você também pode escrever sua própria configuração (independente de ser baseada em uma das acima ou uma configuração totalmente nova) e publicá-la no npm, eu escrevi uma para padronização de commits no meu trabalho e aqui está ela: [**@bristom/commitlint-config**](https://www.npmjs.com/package/@bristom/commitlint-config), você pode checar o [**Repositório do Github**](https://github.com/bristom/commitlint-config) para ver quais são as regras.
 
-To install **husky**, **commitlint** and the config you chose as development dependencies you should run:
+Para instalar o **husky**, **commitlint** e o pacote de configurações que você escolheu como dependências de desenvolvimento você deve rodar:
 
     npm install husky @commitlint/cli <config-package> --dev
 
-Or with **yarn**
+Ou com **yarn**:
 
     yarn add husky @commitlint/cli <config-package> --dev
 
-In my case I'll install the [**@bristom/commitlint-config**](https://www.npmjs.com/package/@bristom/commitlint-config), as it is my default.
+No meu caso eu instalarei a [**@bristom/commitlint-config**](https://www.npmjs.com/package/@bristom/commitlint-config), já que é meu padrão.
 
-Then, in the root of our project, you create two files: **.huskyrc** and **commitlint.config.js**. The .huskyrc file stores the git hooks config for husky to run, and the commitlint.config.js stores the commitlint config to check the commit messages. The content for each one is listed below:
+Então, na raiz do nosso projeto, você pode criar dois arquivos: **.huskyrc** e **commitlint.config.js**. o arquivo .huskyrc guarda as configurações dos git hooks para o husky rodar e o arquivo commitlint.config.js guarda a configuração do commitlint para checar as mensagens de commit. O conteúdo de cada um está listado abaixo:
 
 **.huskyrc**
 
@@ -91,30 +91,30 @@ Then, in the root of our project, you create two files: **.huskyrc** and **commi
 
 ```javascript
 module.exports = {
-	// Replace the @bristom/commitlint-config with the
-	// name of the config package you've just installed.
+	// Reescreva o @bristom/commitlint-config com o
+	// nome do pacote de configuração que você instalou.
 	extends: ['@bristom/commitlint-config']
 };
 ```
 
-Alright, with everything setup, let's try to make a commit:
+Certo, com tudo configurado, vamos tentar fazer um commit:
 
 ```shell
 git commit -m "anything"
 ```
 
-This will throw an error on basically all configs installed, since isn't compatible with any pattern, but if instead I try:
+Isso causará um erro em basicamente todas as configurações instaladas, já que não é compatível com nenhum padrão, mas se eu tentar:
 
 ```shell
 git commit -m "[feat]: Initial commit"
 ```
 
-It will work perfectly (check the pattern of you config package to make the commit right).
+Funcionará perfeitamente (cheque o padrão do seu pacote configuração para fazer o commit corretamente).
 
-## Overview
+## Olhar geral
 
-Now, today we've learned a little bit about git, git hooks and how to automate the check of commit messages patterns using some Javascript tools.
+Então, hoje nós aprendemos um pouco sobre git, git hooks e como automatizar a checagem de padrões de mensagens de commit usando algumas ferramentas Javascript.
 
-But even if I had only used Javascript, you can implement it on any code of yours and the better of it: **using the same tools**, you just have to install **<a href="https://nodejs.org" class="hover:underline">Node.js</a>** and instead of install the commitlint CLI scoped for a project, you install it using the -g flag of npm. The downside is that you won't have hooks automated too, you'll have to configure them on your own.
+Mas mesmo que eu tenha usado apenas Javascript, você pode implementar essas configurações em qualquer código seu e o melhor de tudo: **usando as mesmas ferramentas**, você só deve ter instalado o **<a href="https://nodejs.org" class="hover:underline">Node.js</a>** e ao invés de instalar o commitlint CLI para apenas um projeto, você o instala globalmente usando a flag -g do npm. A desvantagem é que você não terá os hooks automatizados, terá que os configurar por sua conta.
 
-Thanks for your attention and for coming all the way here to learn, hope to see you soon!
+Obrigado por sua atenção e por ter vindo até aqui para aprender, espero te reencontrar logo!
