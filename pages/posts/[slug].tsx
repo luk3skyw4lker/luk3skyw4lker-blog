@@ -1,3 +1,4 @@
+import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 import Head from 'next/head';
@@ -58,23 +59,20 @@ const Post = ({ post, morePosts, preview }: Props) => {
 
 export default Post;
 
-type Params = {
-	params: {
-		slug: string;
-	};
-};
-
-export async function getStaticProps({ params }: Params) {
-	const post = getPostBySlug(params.slug, [
-		'title',
-		'date',
-		'slug',
-		'author',
-		'content',
-		'ogImage',
-		'coverImage',
-		'excerpt'
-	]);
+export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
+	const post = getPostBySlug(
+		{ slug: params?.slug as string, locale: locale as string },
+		[
+			'title',
+			'date',
+			'slug',
+			'author',
+			'content',
+			'ogImage',
+			'coverImage',
+			'excerpt'
+		]
+	);
 
 	const content = await markdownToHtml(post.content || '');
 
@@ -86,19 +84,33 @@ export async function getStaticProps({ params }: Params) {
 			}
 		}
 	};
-}
+};
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
+	const [firstLocale, lastLocale] = locales as string[];
 	const posts = getAllPosts(['slug']);
 
-	return {
-		paths: posts.map(posts => {
-			return {
-				params: {
-					slug: posts.slug
+	const paths = posts
+		.map(post => {
+			return [
+				{
+					params: {
+						slug: post.slug,
+						locale: firstLocale
+					}
+				},
+				{
+					params: {
+						slug: post.slug,
+						locale: lastLocale
+					}
 				}
-			};
-		}),
-		fallback: false
+			];
+		})
+		.flat(1);
+
+	return {
+		paths,
+		fallback: 'blocking'
 	};
-}
+};

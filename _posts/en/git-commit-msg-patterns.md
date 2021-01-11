@@ -1,6 +1,6 @@
 ---
-title: 'Automating commit message patterns with commitlint'
-excerpt: 'Commit messages pattern can really improve your repository organization, observation and standards, today we will learn on how to implement them the right (and automated) way.'
+title: 'Automating commit message patterns with @commitlint/cli'
+excerpt: 'Commit messages pattern can really improve your repository organization, observation and standards, today we will learn how to implement them the right (and automated) way.'
 coverImage: 'https://thumbnail-generator.vercel.app/api/thumbnail.png?title=**Linting**%20git%20commit%20messages&images=https://cdn.worldvectorlogo.com/logos/gitignoreio-1.svg'
 date: '2020-12-16T13:58:07.322Z'
 author:
