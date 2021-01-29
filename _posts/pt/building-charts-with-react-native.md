@@ -36,7 +36,10 @@ Certo, agora que temos a parte principal do projeto conosco, vamos começar faze
 	<LineChart
 		style={{ height: 200 }}
 		data={[10, 15, 20, 10, 19]}
-		svg={{ stroke: 'rgb(0, 0, 0)', strokeWidth: 1.8 }}
+		svg={{
+			stroke: 'rgb(0, 0, 0)',
+			strokeWidth: 1.8
+		}}
 		contentInset={{
 			top: 20,
 			bottom: 20,
@@ -76,7 +79,10 @@ import * as shape from 'd3-shape'
 	<LineChart
 		style={{ height: 200 }}
 		data={[10, 15, 20, 10, 19]}
-		svg={{ stroke: 'rgb(0, 0, 0)', strokeWidth: 1.8 }}
+		svg={{
+			stroke: 'rgb(0, 0, 0)',
+			strokeWidth: 1.8
+		}}
 		contentInset={{
 			top: 20,
 			bottom: 20,
@@ -144,7 +150,9 @@ A propriedade **x**, é uma função de escala para indicar onde o componente se
 Certo, eu dei toda a explicação mas não te mostrei como colocar isso na tela, mas para fazer isso, você simplesmente importa o componente no seu `App.tsx` e passa ele como um filho do componente LineChart, assim:
 
 ```jsx
-import { Markers } from './src/components/ChartComponents';
+import {
+	Markers
+} from './src/components/ChartComponents';
 
 ...
 
@@ -152,7 +160,10 @@ import { Markers } from './src/components/ChartComponents';
 	<LineChart
 		style={{ height: 200 }}
 		data={[10, 15, 20, 10, 19]}
-		svg={{ stroke: 'rgb(0, 0, 0)', strokeWidth: 1.8 }}
+		svg={{
+			stroke: 'rgb(0, 0, 0)',
+			strokeWidth: 1.8
+		}}
 		contentInset={{
 			top: 20,
 			bottom: 20,
@@ -210,7 +221,10 @@ import {
 	<LineChart
 		style={{ height: 200 }}
 		data={[10, 15, 20, 10, 19]}
-		svg={{ stroke: 'rgb(0, 0, 0)', strokeWidth: 1.8 }}
+		svg={{
+			stroke: 'rgb(0, 0, 0)',
+			strokeWidth: 1.8
+		}}
 		contentInset={{
 			top: 20,
 			bottom: 20,
