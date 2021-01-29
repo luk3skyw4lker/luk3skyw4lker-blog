@@ -95,15 +95,15 @@ export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
 			return [
 				{
 					params: {
-						slug: post.slug,
-						locale: firstLocale
-					}
+						slug: post.slug
+					},
+					locale: firstLocale
 				},
 				{
 					params: {
-						slug: post.slug,
-						locale: lastLocale
-					}
+						slug: post.slug
+					},
+					locale: lastLocale
 				}
 			];
 		})
