@@ -52,7 +52,7 @@ The hoisting behavior is majorely caused by the use of the **var** keyword, all 
 
 Here is a pretty nice example of the difference between **var** and **let**:
 
-INSERT IMAGE HERE
+![var, let and const](/assets/blog/hoisting-explained/const-vs-let-vs-var.png)
 
 However, it's recommended to use the **let** keyword only when you absolutely have to change the variable value in execution time, otherwise, the next option must be your choice (and it's also more popular).
 
