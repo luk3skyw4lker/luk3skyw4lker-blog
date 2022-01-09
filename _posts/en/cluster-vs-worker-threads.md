@@ -115,89 +115,89 @@ console.timeEnd('PRIMES');
 
 As you can see, we have used the `console.time()` utility to measure the time that the script takes to run, without the use of worker_threads it took 12.4 seconds for the calculus to end. Now let's see the other case:
 
-    ```js
-    console.time('PRIMES');
+```js
+console.time('PRIMES');
 
-    const {
-    	Worker,
-    	isMainThread,
-    	parentPort,
-    	workerData
-    } = require('worker_threads');
+const {
+	Worker,
+	isMainThread,
+	parentPort,
+	workerData
+} = require('worker_threads');
 
-    const min = 2;
-    let primes = [];
+const min = 2;
+let primes = [];
 
-    function generatePrimes(start, range) {
-    	let isPrime = true;
-    	let end = start + range;
+function generatePrimes(start, range) {
+	let isPrime = true;
+	let end = start + range;
 
-    	for (let i = start; i < end; i++) {
-    		for (let j = min; j < Math.sqrt(end); j++) {
-    			if (i !== j && i % j === 0) {
-    				isPrime = false;
-    				break;
-    			}
-    		}
+	for (let i = start; i < end; i++) {
+		for (let j = min; j < Math.sqrt(end); j++) {
+			if (i !== j && i % j === 0) {
+				isPrime = false;
+				break;
+			}
+		}
 
-    		if (isPrime) {
-    			primes.push(i);
-    		}
+		if (isPrime) {
+			primes.push(i);
+		}
 
-    		isPrime = true;
-    	}
-    }
+		isPrime = true;
+	}
+}
 
-    if (isMainThread) {
-    	const max = 1e7;
-    	const threadCount = Number(process.argv[2]) || 2;
-    	const threads = new Set();
+if (isMainThread) {
+	const max = 1e7;
+	const threadCount = Number(process.argv[2]) || 2;
+	const threads = new Set();
 
-    	console.log(`Running with ${threadCount} threads...`);
+	console.log(`Running with ${threadCount} threads...`);
 
-    	const range = Math.ceil((max - min) / threadCount);
-    	let start = min;
+	const range = Math.ceil((max - min) / threadCount);
+	let start = min;
 
-    	for (let i = 0; i < threadCount - 1; i++) {
-    		const myStart = start;
+	for (let i = 0; i < threadCount - 1; i++) {
+		const myStart = start;
 
-    		threads.add(
-    			new Worker(__filename, { workerData: { start: myStart, range } })
-    		);
+		threads.add(
+			new Worker(__filename, { workerData: { start: myStart, range } })
+		);
 
-    		start += range;
-    	}
+		start += range;
+	}
 
-    	threads.add(
-    		new Worker(__filename, {
-    			workerData: { start, range: range + ((max - min + 1) % threadCount) }
-    		})
-    	);
+	threads.add(
+		new Worker(__filename, {
+			workerData: { start, range: range + ((max - min + 1) % threadCount) }
+		})
+	);
 
-    	for (let worker of threads) {
-    		worker.on('error', err => {
-    			throw err;
-    		});
+	for (let worker of threads) {
+		worker.on('error', err => {
+			throw err;
+		});
 
-    		worker.on('exit', () => {
-    			threads.delete(worker);
+		worker.on('exit', () => {
+			threads.delete(worker);
 
-    			console.log(`Thread exiting, ${threads.size} running...`);
+			console.log(`Thread exiting, ${threads.size} running...`);
 
-    			if (threads.size === 0) {
-    				console.timeEnd('PRIMES');
-    			}
-    		});
+			if (threads.size === 0) {
+				console.timeEnd('PRIMES');
+			}
+		});
 
-    		worker.on('message', msg => {
-    			primes = primes.concat(msg);
-    		});
-    	}
-    } else {
-    	generatePrimes(workerData.start, workerData.range);
-    	parentPort.postMessage(primes);
-    }
-    ```
+		worker.on('message', msg => {
+			primes = primes.concat(msg);
+		});
+	}
+} else {
+	generatePrimes(workerData.start, workerData.range);
+	parentPort.postMessage(primes);
+}
+```
 
 It seems a whole new script, but we have just added the `worker_threads` logics. When you're on the main thread, you just set up the environment for the workers, and when you're not in the main thread, it automatically means you're inside a worker, and then you can call your CPU-intensive function.
 
