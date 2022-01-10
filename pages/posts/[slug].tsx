@@ -16,11 +16,11 @@ import PostType from '../../types/post';
 
 type Props = {
 	post: PostType;
-	morePosts: PostType[];
+	// morePosts: PostType[];
 	preview?: boolean;
 };
 
-const Post = ({ post, morePosts, preview }: Props) => {
+const Post = ({ post, preview }: Props) => {
 	const router = useRouter();
 
 	if (!router.isFallback && !post?.slug) {
@@ -29,6 +29,16 @@ const Post = ({ post, morePosts, preview }: Props) => {
 
 	return (
 		<Layout preview={preview}>
+			<Head>
+				<title>{post.title} | Lucas Lemos Blog</title>
+
+				<meta name="description" content={post.excerpt} />
+
+				<meta property="og:description" content={post.excerpt} />
+				<meta property="og:image" content={post.coverImage} />
+				<meta property="og:title" content={`${post.title}`} />
+				<meta property="og:type" content="article" />
+			</Head>
 			<Container>
 				<Header />
 				{router.isFallback ? (
@@ -36,12 +46,6 @@ const Post = ({ post, morePosts, preview }: Props) => {
 				) : (
 					<>
 						<article className="mb-32">
-							<Head>
-								<title>{post.title} | Lucas Lemos Blog</title>
-
-								<meta name="description" content={post.excerpt} />
-								<meta property="og:image" content={post.coverImage} />
-							</Head>
 							<PostHeader
 								title={post.title}
 								coverImage={post.coverImage}

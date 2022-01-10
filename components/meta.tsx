@@ -27,10 +27,13 @@ const Meta = () => {
 				color="#000000"
 			/>
 			<link rel="shortcut icon" href="/favicon/favicon.ico" />
+			<link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+
 			<meta name="msapplication-TileColor" content="#000000" />
 			<meta name="msapplication-config" content="/favicon/browserconfig.xml" />
 			<meta name="theme-color" content="#000" />
-			<link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+			<meta property="twitter:creator" content="@luk3skyw4lker" />
+			<meta name="twitter:card" content="summary_large_image" />
 		</Head>
 	);
 };

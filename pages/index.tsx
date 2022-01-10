@@ -32,7 +32,11 @@ const Index = ({ allPosts, locale }: Props) => {
 					<title>{BLOG_TITLE}</title>
 
 					<meta name="description" content={meta_description} />
+
+					<meta property="og:description" content={meta_description} />
 					<meta property="og:image" content={HOME_OG_IMAGE_URL} />
+					<meta property="og:title" content={BLOG_TITLE} />
+					<meta property="og:type" content="website" />
 				</Head>
 				<Container>
 					<Intro locale={locale} />
