@@ -1,7 +1,7 @@
 ---
 title: 'Building charts in React Native'
 excerpt: 'It was always a challenge to build charts in React Native, today I will show you how to do it in a easy way using a library that builds the charts using an svg approach.'
-coverImage: 'https://thumbnail-generator.vercel.app/api/thumbnail.png?title=Building%20**charts**%20in%20**React%20Native**&images=https://cdn.worldvectorlogo.com/logos/react-2.svg&images=https://www.flaticon.com/svg/static/icons/svg/784/784814.svg'
+coverImage: 'https://thumbnail-generator.vercel.app/api/thumbnail.png?title=Building%20**charts**%20in%20**React%20Native**&images=https://cdn.worldvectorlogo.com/logos/react-2.svg&images=https://www.svgrepo.com/show/167736/pie-charts.svg'
 date: '2020-12-18T13:58:07.322Z'
 author:
   name: Lucas Henrique
