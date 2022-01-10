@@ -213,4 +213,4 @@ Eu o executei com 4 e 8 threads também, com 4 foram precisos 3.3 segundos para 
 
 Nós vimos o poder e a diferença dos módulos `cluster` e `worker_threads` hoje e eu espero que esse artigo tenha feito voce entender todas as nuances entre esses dois módulos e suas aplicaçoes.
 
-Se existe alguma dúvida ou alguma errata, contate me no meu Github (o link está no meu nome de usuário no final da página).
+Se existe alguma dúvida ou alguma errata, contate me no meu Github (o link está no meu nome de usuário no final da página). O repositório do Github para esse artigo pode ser acessado via este **[link](https://github.com/luk3skyw4lker/cluster-vs-worker-threads)**.
