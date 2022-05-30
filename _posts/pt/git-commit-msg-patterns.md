@@ -1,13 +1,13 @@
 ---
 title: 'Automatizando padrões de mensagem de commit com @commitlint/cli'
 excerpt: 'Mensagens de commit podem realmente melhorar a organização, observação e padrões do seu repositório. Hoje vamos aprender como podemos implementá-las da forma correta (e automatizada).'
-coverImage: 'https://thumbnail-generator.vercel.app/api/thumbnail.png?title=**Corrigindo**%20mensagens%20de%20commit%20no%20git&images=https://cdn.worldvectorlogo.com/logos/gitignoreio-1.svg'
+coverImage: 'https://thumbnails.luk3skyw4lker.com/api/thumbnail.png?title=**Corrigindo**%20mensagens%20de%20commit%20no%20git&images=https://cdn.worldvectorlogo.com/logos/gitignoreio-1.svg'
 date: '2020-12-16T13:58:07.322Z'
 author:
   name: Lucas Henrique
   picture: '/assets/blog/authors/luk3skyw4lker.jpg'
 ogImage:
-  url: 'https://thumbnail-generator.vercel.app/api/thumbnail.png?title=**Corrigindo**%20mensagens%20de%20commit%20no%20git&images=https://cdn.worldvectorlogo.com/logos/gitignoreio-1.svg'
+  url: 'https://thumbnails.luk3skyw4lker.com/api/thumbnail.png?title=**Corrigindo**%20mensagens%20de%20commit%20no%20git&images=https://cdn.worldvectorlogo.com/logos/gitignoreio-1.svg'
 ---
 
 ## Primeiramente

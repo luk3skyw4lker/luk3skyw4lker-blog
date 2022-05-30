@@ -1,13 +1,13 @@
 ---
 title: 'Construindo gráficos com React Native'
 excerpt: 'Sempre foi um desafio construir gráficos com React Native, hoje eu demonstrarei como fazê-lo de uma maneira fácil usando uma biblioteca que constrói os gráficos usando uma abordagem de SVG'
-coverImage: 'https://thumbnail-generator.vercel.app/api/thumbnail.png?title=Construindo%20**gráficos**%20com%20**React%20Native**&images=https://cdn.worldvectorlogo.com/logos/react-2.svg&images=https://www.svgrepo.com/show/167736/pie-charts.svg'
+coverImage: 'https://thumbnails.luk3skyw4lker.com/api/thumbnail.png?title=Construindo%20**gráficos**%20com%20**React%20Native**&images=https://cdn.worldvectorlogo.com/logos/react-2.svg&images=https://www.svgrepo.com/show/167736/pie-charts.svg'
 date: '2020-12-18T13:58:07.322Z'
 author:
   name: Lucas Henrique
   picture: '/assets/blog/authors/luk3skyw4lker.jpg'
 ogImage:
-  url: 'https://thumbnail-generator.vercel.app/api/thumbnail.png?title=Construindo%20**gráficos**%20com%20**React%20Native**&images=https://cdn.worldvectorlogo.com/logos/react-2.svg&images=https://www.flaticon.com/svg/static/icons/svg/784/784814.svg'
+  url: 'https://thumbnails.luk3skyw4lker.com/api/thumbnail.png?title=Construindo%20**gráficos**%20com%20**React%20Native**&images=https://cdn.worldvectorlogo.com/logos/react-2.svg&images=https://www.flaticon.com/svg/static/icons/svg/784/784814.svg'
 ---
 
 ## Visão geral
