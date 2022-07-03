@@ -1,13 +1,13 @@
 ---
 title: 'Explaining hoisting in Javascript'
 excerpt: 'Hoisting is a big doubt among developers, those who does not understand this concept are always wondering why some part of their code is not working. Today we are going to learn what is hoisting and how to avoid it (or use it consciously).'
-coverImage: 'https://thumbnail-generator.vercel.app/api/thumbnail.png?title=**Hoisting**%20explained&images=https%3A%2F%2Fcdn.worldvectorlogo.com%2Flogos%2Flogo-javascript.svg'
+coverImage: 'https://thumbnails.luk3skyw4lker.com/api/thumbnail.png?title=**Hoisting**%20explained&images=https%3A%2F%2Fcdn.worldvectorlogo.com%2Flogos%2Flogo-javascript.svg'
 date: '2020-12-14T22:40:07.322Z'
 author:
   name: Lucas Henrique
   picture: '/assets/blog/authors/luk3skyw4lker.jpg'
 ogImage:
-  url: 'https://thumbnail-generator.vercel.app/api/thumbnail.png?title=**Hoisting**%20explained&images=https%3A%2F%2Fcdn.worldvectorlogo.com%2Flogos%2Flogo-javascript.svg'
+  url: 'https://thumbnails.luk3skyw4lker.com/api/thumbnail.png?title=**Hoisting**%20explained&images=https%3A%2F%2Fcdn.worldvectorlogo.com%2Flogos%2Flogo-javascript.svg'
 ---
 
 ## What is hoisting?

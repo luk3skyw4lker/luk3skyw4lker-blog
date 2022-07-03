@@ -1,13 +1,13 @@
 ---
 title: 'Cluster vs Worker Threads'
 excerpt: 'There is a lot of discussions about the Cluster and Worker Threads modules in Node.js, but what are they after all? Are they the same? Similar? How do they work? We are going to answer all those questions with this article.'
-coverImage: 'https://thumbnail-generator.vercel.app/api/thumbnail.png?title=**Cluster**%20vs%20**Worker%20Threads**&images=https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg'
+coverImage: 'https://thumbnails.luk3skyw4lker.com/api/thumbnail.png?title=**Cluster**%20vs%20**Worker%20Threads**&images=https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg'
 date: '2022-01-09T17:00:00.322Z'
 author:
   name: Lucas Henrique
   picture: '/assets/blog/authors/luk3skyw4lker.jpg'
 ogImage:
-  url: 'https://thumbnail-generator.vercel.app/api/thumbnail.png?title=**Cluster**%20vs%20**Worker%20Threads**&images=https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg'
+  url: 'https://thumbnails.luk3skyw4lker.com/api/thumbnail.png?title=**Cluster**%20vs%20**Worker%20Threads**&images=https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg'
 ---
 
 ## Introduction
