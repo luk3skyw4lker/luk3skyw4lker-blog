@@ -69,10 +69,10 @@
     "@babel/helper-validator-identifier" "^7.14.9"
     to-fast-properties "^2.0.0"
 
-"@bristom/commitlint-config@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@bristom/commitlint-config/-/commitlint-config-1.0.1.tgz#601d2384001fe76f92e2da7503d806731d2f9da5"
-  integrity sha512-WK9K1T0xROGCICAeMHdgNEjcdXleeGmYPXYpnVzpBpu5vshIMzmHRSXz23TbRAaJcICjpQVKAo0MqKuIV03XFg==
+"@bristom/commitlint-config@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@bristom/commitlint-config/-/commitlint-config-1.0.3.tgz#0b28e9c74e6f3e8706b8151bfb88456f3644862d"
+  integrity sha512-jYxUl9c/uxbo7J6lqz0s82G0FvqQ4oXuDVmKhbfBmm9NrhlO0rditdDyAN4e7Lf18esUXqz4ogsynu/BIQe79g==
 
 "@commitlint/cli@^11.0.0":
   version "11.0.0"
@@ -756,9 +756,9 @@ camelcase@^5.0.0, camelcase@^5.3.1:
   integrity sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==
 
 caniuse-lite@^1.0.30000981, caniuse-lite@^1.0.30001109, caniuse-lite@^1.0.30001157, caniuse-lite@^1.0.30001202, caniuse-lite@^1.0.30001219, caniuse-lite@^1.0.30001228:
-  version "1.0.30001294"
-  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001294.tgz"
-  integrity sha512-LiMlrs1nSKZ8qkNhpUf5KD0Al1KCBE3zaT7OLOwEkagXMEDij98SiOovn9wxVGQpklk9vVC/pUSqgYmkmKOS8g==
+  version "1.0.30001369"
+  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001369.tgz"
+  integrity sha512-OY1SBHaodJc4wflDIKnlkdqWzJZd1Ls/2zbVJHBSv3AT7vgOJ58yAhd2CN4d57l2kPJrgMb7P9+N1Mhy4tNSQA==
 
 ccount@^1.0.0:
   version "1.1.0"
