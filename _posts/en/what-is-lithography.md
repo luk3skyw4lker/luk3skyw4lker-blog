@@ -2,7 +2,7 @@
 title: 'What is lithography?'
 excerpt: 'Did you ever thought about how processors are made? Or how does it work inside? Today I will try to explain a little of these topics for you and speak about lithography, which is one of the concepts present in the making of all CPUs today.'
 coverImage: 'https://thumbnails.luk3skyw4lker.com/api/thumbnail.png?title=What%20is%20**lithography**%3F&images=https://www.svgrepo.com/show/135990/cpu.svg'
-date: '2022-07-10T13:00:00.000Z'
+date: '2022-08-21T13:00:00.000Z'
 author:
   name: Lucas Henrique
   picture: '/assets/blog/authors/luk3skyw4lker.jpg'
