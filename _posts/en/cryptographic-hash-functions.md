@@ -1,7 +1,7 @@
 ---
 title: 'Cryptographic Hash Functions'
 excerpt: 'In this article we will talk a little bit about cryptography focused into hash functions, differences to the cryptographic algorithms and why they are so useful.'
-coverImage: 'https://thumbnails.luk3skyw4lker.com/api/thumbnail.png?title=Cryptographic%20**hash**%20**functions**&images=https://cdn.iconscout.com/icon/free/png-256/recovery-key-1824312-1545968.png'
+coverImage: 'https://thumbnails.luk3skyw4lker.com/api/thumbnail.png?title=Cryptographic%20**hash**%20**functions**&images=https://www.svgrepo.com/show/192426/room-key-key.svg'
 date: '2022-07-03T13:00:00.322Z'
 author:
   name: Lucas Henrique
