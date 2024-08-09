@@ -2,7 +2,7 @@
 title: 'JWTs: what are those and how do they work'
 excerpt: 'JWTs, JSON Web Tokens or Tokens, you know them by a lot of names, but in this article we are going to depict them in detail and show you how they work and what is the code to generate them like'
 coverImage: 'https://thumbnails.luk3skyw4lker.com/api/thumbnail.png?title=**JWTs**:%20what%20are%20those%20and%20how%20to%20they%20work&images=https://cdn.worldvectorlogo.com/logos/jwt-3.svg'
-date: '2024-08-05T18:35:00.322Z'
+date: '2024-08-09T10:20:00.322Z'
 author:
   name: Lucas Henrique
   picture: '/assets/blog/authors/luk3skyw4lker.jpg'

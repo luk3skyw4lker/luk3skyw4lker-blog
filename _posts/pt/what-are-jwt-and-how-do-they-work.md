@@ -2,7 +2,7 @@
 title: 'JWTs: o que são e como eles funcionam'
 excerpt: 'JWTs, JSON Web Tokens ou Tokens, você os conhece por vaŕios nomes, mas nesse artigo nós vamos expor eles em detalhes e mostrar como eles funcionam e como é o código para gerá-los'
 coverImage: 'https://thumbnails.luk3skyw4lker.com/api/thumbnail.png?title=**JWTs**:%20o%20que%20são%20e%20como%20eles%20funcionam&images=https://cdn.worldvectorlogo.com/logos/jwt-3.svg'
-date: '2024-08-05T18:35:00.322Z'
+date: '2024-08-09T10:20:00.322Z'
 author:
   name: Lucas Henrique
   picture: '/assets/blog/authors/luk3skyw4lker.jpg'
