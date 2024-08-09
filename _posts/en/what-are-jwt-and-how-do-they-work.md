@@ -12,7 +12,7 @@ ogImage:
 
 ## Definition
 
-The short definition of a JSON Web Token (or **JWT**) is: a stateless token that stores important information for the frontend and for the backend of the application. According to the [RFC 7519](https://datatracker.ietf.org/doc/html/rfc7519), the long definition is: A compact and URL-safe means of representing claims to be transferred between two parties. The claims in a JWT are encoded as a JSON object that is used as the payload of a JSON Web Signature (JWS) structure or as the plaintext of a JSON Web Encryption (JWE) structure, enabling the claims to be digitally signed or integrity protected with a Message Authentication Code (MAC) and/or encrypted.
+The short definition of a JSON Web Token (or **JWT**) is: a stateless token that stores important information for communication between two parties. According to the [RFC 7519](https://datatracker.ietf.org/doc/html/rfc7519), the long definition is: A compact and URL-safe means of representing claims to be transferred between two parties. The claims in a JWT are encoded as a JSON object that is used as the payload of a JSON Web Signature (JWS) structure or as the plaintext of a JSON Web Encryption (JWE) structure, enabling the claims to be digitally signed or integrity protected with a Message Authentication Code (MAC) and/or encrypted.
 
 JWTs are widely used in almost any kind of authentication system to transfer non-sensitive information about a user or his permissions. The structure of a JWT is the following:
 
@@ -22,13 +22,31 @@ JWTs are widely used in almost any kind of authentication system to transfer non
 
 It consists of three parts that are equally encoded using the base64url algorithm and separated by a period character (.) at the end of every part. It is encoded as base64 to facilitate the transfer of the token through parties. Here we take a deeper dive into each of the sections mentioned.
 
+### Encoding
+
+Let's talk about the encoding first, the algorithm used in the JWT encoding is called base64url and it is based on an algorithm called base64. The base64 algorithm is a way of bytes-to-text encoding to represent binary data as text using a specific set of letters and numbers. The default set of the base64 algorithm is the following:
+
+```
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/
+```
+
+The base64 encoding works by doing a series of mathematical operations in each byte of the data you want to encode to transform it into a ASCII code that fits into the set specified above.
+
+There's some alternative versions of the base64 encoding and one of them is the base64url algorithm, this version changes the set a bit to make the base64 encoded info safe to be transmitted in URLs as query params or url params, the set for the base64url is:
+
+```
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_
+```
+
+The difference is on the latest two characters that in the default set are `+/` and in the url version they are `-_` because the plus and slash characters can't be used safely in a URL, since they are reserved characters used in the URL, the plus sign is often used in place of the space character to parse strings and the slash character is used to separate the paths of the URL, hence, JWTs use the base64url version of the base64 encoding to make the tokens URL-safe.
+
 ### Header
 
-The header of the JWT is compose by claims containing some general information about the token, like the `typ` and `alg` claim. Let's talk about those claims:
+The header of the JWT is compose by claims containing some general information about the token, like the `typ` and `alg` claims. Let's talk about those claims:
 
 - `typ`: this claim usually says what is the media type of the whole JWT. Usually ignored because the object is known to be a JWT already;
 - `alg`: usually specifies what is the algorithm used to generate the signing part of the JWT, ex: `HS256`, `RS256` and so on;
-- `cty`: content type parameter, it's not recommended in case of no use of nested signing or encryption operations, if they are used, the recommended value is "JWT", to indicate that a nested JWT is enclosed in the JWT in which the `cty` header is present.
+- `cty`: content type parameter, it's not recommended in case of no use of nested signing or encryption operations, if they are used, the recommended value is "JWT", to indicate that a nested JWT is enclosed in the JWT in which the `cty` claim is present.
 
 Those are the most common and RFC defined claims that can be used in a JWT, you can define claims on your own but custom claims are usually defined at the payload of the JWT, which is the section we're talking about next.
 
@@ -61,7 +79,7 @@ The HMAC ones are fairly simple, it's basically a hash generated with the info i
 
 The RSA ones are more complicated though since RSA is a type of assymetric encryption, a subject that would give us enough to write another whole article about. RSA encryption uses a pair of keys, so you need to have a public and a private key, you sign the JWT with the private key and validate the signature with your public key.
 
-**Note**: NEVER EXPOSE none of the keys you use to sign a JWT, it's very sensitive information and in case of it being exposed, people can fake JWTs to get inside your application and ALWAYS use a strong key that's difficult to guess, like a random string generated by some program or a pair of RSA keys. The signature is the only thing making the JWT safe for your application to use.
+**Note**: NEVER EXPOSE none of the keys you use to sign a JWT, it's very sensitive information and in case of it being exposed, attackers can fake JWTs to get inside your application. ALWAYS use a strong key that's difficult to guess, like a random string generated by some program or a pair of RSA keys. The signature is the only thing making the JWT safe for your application to use.
 
 ## Generation
 
@@ -79,7 +97,7 @@ Payload:
 
 How should the process happen to encode those informations and how would they look at the end? The answer is to follow this steps:
 
-1. Define what signing algorithm you will;
+1. Define what signing algorithm you will use;
 2. Encode the stringified version of the header into a base64url string;
 3. Encode the stringified version of the payload into a base64url string;
 4. Use the encoded header, encoded payload and the key to generate a HMAC to verify the JWT with according to the algorithm chosen;
